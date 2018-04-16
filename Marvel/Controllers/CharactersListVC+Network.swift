@@ -20,7 +20,9 @@ extension CharactersListVC {
             
             guard let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? JSON else { return }
 
+            let response = Response<Character>.init(with: json!)
             
+            print(response)
         }
         
         dataTask?.resume()

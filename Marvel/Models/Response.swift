@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Response {
+struct Response<T> {
     
     var code: Int?
     
@@ -22,5 +22,5 @@ struct Response {
     
     var eTag: String?
     
-    var data: ResponseData<Character>
+    var data: ResponseData<T>?
 }
