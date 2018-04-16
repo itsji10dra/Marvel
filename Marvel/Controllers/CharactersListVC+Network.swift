@@ -16,7 +16,7 @@ extension CharactersListVC {
         
         dataTask?.cancel()
         
-        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             
             guard let data = data else { return }
             
@@ -26,7 +26,13 @@ extension CharactersListVC {
             
             let response = Response<Character>.init(with: json)
             
-            print(response)
+            guard let charactersArray = response.data?.results else { return }
+            
+            self?.charactersArray = charactersArray
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
         
         dataTask?.resume()

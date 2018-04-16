@@ -10,8 +10,18 @@ import UIKit
 
 class CharactersDetailsVC: UIViewController {
 
+    // MARK: - IBOutlets
+
+    
+    // MARK: - Data
+
+    var character: Character?
+    
+    // MARK: - View
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = character?.name
     }
 }

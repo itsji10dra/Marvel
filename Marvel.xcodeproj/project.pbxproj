@@ -34,6 +34,7 @@
 		102D7A242084DFA900BC591B /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A1D2084DE0900BC591B /* Alias.swift */; };
 		102D7A262084E20F00BC591B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A252084E20F00BC591B /* Initializer.swift */; };
 		102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A2D2084EF0C00BC591B /* URL+Extension.swift */; };
+		102D7A332085134D00BC591B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A322085134D00BC591B /* Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		102D7A212084DED400BC591B /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		102D7A252084E20F00BC591B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 		102D7A2D2084EF0C00BC591B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		102D7A322085134D00BC591B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				102D79C62084B17800BC591B /* AppDelegate.swift */,
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
+				102D7A342085135700BC591B /* UI */,
 				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A162084D18300BC591B /* Network */,
 				102D7A132084CC5800BC591B /* Views */,
@@ -239,6 +242,14 @@
 				102D79CF2084B17900BC591B /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		102D7A342085135700BC591B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A322085134D00BC591B /* Navigation.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +400,7 @@
 				102D79FD2084BF2900BC591B /* CollectionInfo.swift in Sources */,
 				102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */,
 				102D79F72084BD6900BC591B /* Thumbnail.swift in Sources */,
+				102D7A332085134D00BC591B /* Navigation.swift in Sources */,
 				102D7A222084DED400BC591B /* ResponseData.swift in Sources */,
 				102D79C72084B17800BC591B /* AppDelegate.swift in Sources */,
 				102D7A032084C62F00BC591B /* Story.swift in Sources */,
