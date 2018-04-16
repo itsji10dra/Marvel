@@ -18,9 +18,13 @@ extension CharactersListVC {
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            guard let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? JSON else { return }
+            guard let data = data else { return }
+            
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
 
-            let response = Response<Character>.init(with: json!)
+            guard let json = jsonObject as? JSON else { return }
+            
+            let response = Response<Character>.init(with: json)
             
             print(response)
         }

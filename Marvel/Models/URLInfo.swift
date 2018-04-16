@@ -14,3 +14,11 @@ struct URLInfo {
     
     var url: URL?
 }
+
+extension URLInfo: Initializer {
+    
+    init(with json: JSON) {
+        self.type = json["type"] as? String
+        self.url = URL(string: json["url"] as? String)
+    }
+}

@@ -40,12 +40,24 @@ extension Character: Initializer {
         self.name = json["name"] as? String
         self.description = json["description"] as? String
         self.modified = nil
-        self.thumbnail = nil
-        self.resourceURI = nil
+        
+        if let thumbnailJSON = json["thumbnail"] as? JSON {
+            self.thumbnail = Thumbnail.init(with: thumbnailJSON)
+        } else {
+            self.thumbnail = nil
+        }
+        
+        self.resourceURI = URL(string: json["resourceURI"] as? String)
+        
         self.comicsInfo = nil
         self.seriesInfo = nil
         self.storiesInfo = nil
         self.eventsInfo = nil
-        self.urls = nil
+
+        if let urlJSONArray = json["urls"] as? [JSON] {
+            self.urls = urlJSONArray.compactMap { URLInfo.init(with: $0) }
+        } else {
+            self.urls = nil
+        }
     }
 }

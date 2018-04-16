@@ -18,3 +18,4 @@ struct CollectionInfo<T> where T: Resource {
     
     var collection: [T]?
 }
+

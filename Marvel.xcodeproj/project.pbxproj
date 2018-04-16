@@ -35,6 +35,7 @@
 		102D7A262084E20F00BC591B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A252084E20F00BC591B /* Initializer.swift */; };
 		102D7A282084E2AE00BC591B /* Response+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A272084E2AE00BC591B /* Response+Initializer.swift */; };
 		102D7A2A2084E74700BC591B /* ResponseData+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A292084E74700BC591B /* ResponseData+Initializer.swift */; };
+		102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A2D2084EF0C00BC591B /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		102D7A252084E20F00BC591B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 		102D7A272084E2AE00BC591B /* Response+Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Initializer.swift"; sourceTree = "<group>"; };
 		102D7A292084E74700BC591B /* ResponseData+Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResponseData+Initializer.swift"; sourceTree = "<group>"; };
+		102D7A2D2084EF0C00BC591B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				102D79C62084B17800BC591B /* AppDelegate.swift */,
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
+				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A162084D18300BC591B /* Network */,
 				102D7A132084CC5800BC591B /* Views */,
 				102D7A102084CADE00BC591B /* Controllers */,
@@ -227,6 +230,14 @@
 				102D7A192084D32F00BC591B /* URLManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		102D7A2F2084EF0F00BC591B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A2D2084EF0C00BC591B /* URL+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				102D7A0D2084CACB00BC591B /* CharactersListVC.swift in Sources */,
 				102D7A1A2084D32F00BC591B /* URLManager.swift in Sources */,
 				102D79FD2084BF2900BC591B /* CollectionInfo.swift in Sources */,
+				102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */,
 				102D79F72084BD6900BC591B /* Thumbnail.swift in Sources */,
 				102D7A222084DED400BC591B /* ResponseData.swift in Sources */,
 				102D79C72084B17800BC591B /* AppDelegate.swift in Sources */,
