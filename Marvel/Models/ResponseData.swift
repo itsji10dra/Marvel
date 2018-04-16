@@ -20,3 +20,19 @@ struct ResponseData<T> {
     
     var results: [T]?
 }
+
+extension ResponseData where T: Initializer {
+    
+    init(with json: JSON) {
+        self.offset = json["offset"] as? Int
+        self.limit = json["limit"] as? Int
+        self.total = json["total"] as? Int
+        self.count = json["count"] as? Int
+        
+        if let results = json["results"] as? [JSON] {
+            self.results = results.compactMap { T.init(with: $0) }
+        } else {
+            self.results = nil
+        }
+    }
+}
