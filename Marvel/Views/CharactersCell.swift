@@ -12,7 +12,7 @@ class CharactersCell: UITableViewCell {
 
     // MARK: - IBOutlets
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var thumbImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
 

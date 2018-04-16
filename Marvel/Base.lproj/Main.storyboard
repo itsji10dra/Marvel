@@ -83,8 +83,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="K3c-zT-Fg4" id="8am-BL-SUc"/>
                                             <outlet property="nameLabel" destination="jI3-nX-6YW" id="diq-Ef-KHB"/>
+                                            <outlet property="thumbImageView" destination="K3c-zT-Fg4" id="8am-BL-SUc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
