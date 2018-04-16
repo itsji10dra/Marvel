@@ -35,6 +35,8 @@
 		102D7A262084E20F00BC591B /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A252084E20F00BC591B /* Initializer.swift */; };
 		102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A2D2084EF0C00BC591B /* URL+Extension.swift */; };
 		102D7A332085134D00BC591B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A322085134D00BC591B /* Navigation.swift */; };
+		102D7A3920851B8100BC591B /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A3820851B8100BC591B /* URLType.swift */; };
+		102D7A3C20851BED00BC591B /* StoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A3B20851BED00BC591B /* StoryType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		102D7A252084E20F00BC591B /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
 		102D7A2D2084EF0C00BC591B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		102D7A322085134D00BC591B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		102D7A3820851B8100BC591B /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		102D7A3B20851BED00BC591B /* StoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 		102D7A0A2084C95B00BC591B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				102D7A3A20851B8400BC591B /* Enums */,
 				102D7A1F2084DE8500BC591B /* Response.swift */,
 				102D7A212084DED400BC591B /* ResponseData.swift */,
 				102D79F42084B4FB00BC591B /* Character.swift */,
@@ -250,6 +255,15 @@
 				102D7A322085134D00BC591B /* Navigation.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		102D7A3A20851B8400BC591B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A3820851B8100BC591B /* URLType.swift */,
+				102D7A3B20851BED00BC591B /* StoryType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +410,7 @@
 				102D7A072084C88500BC591B /* Resource.swift in Sources */,
 				102D7A122084CC5300BC591B /* CharactersCell.swift in Sources */,
 				102D7A0D2084CACB00BC591B /* CharactersListVC.swift in Sources */,
+				102D7A3920851B8100BC591B /* URLType.swift in Sources */,
 				102D7A1A2084D32F00BC591B /* URLManager.swift in Sources */,
 				102D79FD2084BF2900BC591B /* CollectionInfo.swift in Sources */,
 				102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */,
@@ -404,6 +419,7 @@
 				102D7A222084DED400BC591B /* ResponseData.swift in Sources */,
 				102D79C72084B17800BC591B /* AppDelegate.swift in Sources */,
 				102D7A032084C62F00BC591B /* Story.swift in Sources */,
+				102D7A3C20851BED00BC591B /* StoryType.swift in Sources */,
 				102D7A052084C71700BC591B /* URLInfo.swift in Sources */,
 				102D7A0F2084CADA00BC591B /* CharactersDetailsVC.swift in Sources */,
 			);

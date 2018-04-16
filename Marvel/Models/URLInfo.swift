@@ -10,7 +10,7 @@ import Foundation
 
 struct URLInfo {
     
-    var type: String?
+    var type: URLType = .unknown
     
     var url: URL?
 }
@@ -18,7 +18,13 @@ struct URLInfo {
 extension URLInfo: Initializer {
     
     init(with json: JSON) {
-        self.type = json["type"] as? String
+        
+        if let type = json["type"] as? String {
+            self.type = URLType(rawValue: type) ?? .unknown
+        } else {
+            self.type = .unknown
+        }
+        
         self.url = URL(string: json["url"] as? String)
     }
 }

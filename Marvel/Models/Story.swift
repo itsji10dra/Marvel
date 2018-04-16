@@ -14,7 +14,7 @@ struct Story: Resource {
     
     var name: String?
     
-    var type: String?
+    var type: StoryType = .unknown
 }
 
 extension Story: Initializer {
@@ -22,6 +22,11 @@ extension Story: Initializer {
     init(with json: JSON) {
         self.resourceURI = URL(string: json["resourceURI"] as? String)
         self.name = json["name"] as? String
-        self.type = json["type"] as? String
+
+        if let type = json["type"] as? String {
+            self.type = StoryType(rawValue: type) ?? .unknown
+        } else {
+            self.type = .unknown
+        }
     }
 }
