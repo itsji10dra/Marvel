@@ -16,3 +16,12 @@ struct Story: Resource {
     
     var type: String?
 }
+
+extension Story: Initializer {
+    
+    init(with json: JSON) {
+        self.resourceURI = URL(string: json["resourceURI"] as? String)
+        self.name = json["name"] as? String
+        self.type = json["type"] as? String
+    }
+}

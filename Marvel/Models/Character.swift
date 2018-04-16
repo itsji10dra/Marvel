@@ -49,10 +49,29 @@ extension Character: Initializer {
         
         self.resourceURI = URL(string: json["resourceURI"] as? String)
         
-        self.comicsInfo = nil
-        self.seriesInfo = nil
-        self.storiesInfo = nil
-        self.eventsInfo = nil
+        if let comics = json["comics"] as? JSON {
+            self.comicsInfo = CollectionInfo<Comic>.init(with: comics)
+        } else {
+            self.comicsInfo = nil
+        }
+
+        if let series = json["series"] as? JSON {
+            self.seriesInfo = CollectionInfo<Series>.init(with: series)
+        } else {
+            self.seriesInfo = nil
+        }
+
+        if let stories = json["stories"] as? JSON {
+            self.storiesInfo = CollectionInfo<Story>.init(with: stories)
+        } else {
+            self.storiesInfo = nil
+        }
+
+        if let events = json["events"] as? JSON {
+            self.eventsInfo = CollectionInfo<Events>.init(with: events)
+        } else {
+            self.eventsInfo = nil
+        }
 
         if let urlJSONArray = json["urls"] as? [JSON] {
             self.urls = urlJSONArray.compactMap { URLInfo.init(with: $0) }

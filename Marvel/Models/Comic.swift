@@ -14,3 +14,11 @@ struct Comic: Resource {
     
     var name: String?
 }
+
+extension Comic: Initializer {
+    
+    init(with json: JSON) {
+        self.resourceURI = URL(string: json["resourceURI"] as? String)
+        self.name = json["name"] as? String
+    }
+}
