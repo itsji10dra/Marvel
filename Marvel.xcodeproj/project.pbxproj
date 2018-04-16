@@ -150,8 +150,7 @@
 				102D7A102084CADE00BC591B /* Controllers */,
 				102D7A0B2084C96300BC591B /* Protocols */,
 				102D7A0A2084C95B00BC591B /* Models */,
-				102D79CD2084B17900BC591B /* Assets.xcassets */,
-				102D79CF2084B17900BC591B /* LaunchScreen.storyboard */,
+				102D7A3120850C7C00BC591B /* Resources */,
 				102D79D22084B17900BC591B /* Info.plist */,
 			);
 			path = Marvel;
@@ -237,6 +236,15 @@
 				102D7A2D2084EF0C00BC591B /* URL+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		102D7A3120850C7C00BC591B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				102D79CD2084B17900BC591B /* Assets.xcassets */,
+				102D79CF2084B17900BC591B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
