@@ -31,7 +31,7 @@
         <!--Characters List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Characters List" customClass="CharactersListVC" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharactersList" id="BYZ-38-t0r" userLabel="Characters List" customClass="CharactersListVC" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Marvel" id="EWA-ZQ-JHD"/>
                     <connections>
-                        <segue destination="3OS-fS-chm" kind="show" id="hC1-6I-2ln"/>
+                        <segue destination="3OS-fS-chm" kind="show" identifier="CharactersDetails" id="hC1-6I-2ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,7 +50,7 @@
         <!--Characters Details-->
         <scene sceneID="h80-IA-Dva">
             <objects>
-                <viewController id="3OS-fS-chm" userLabel="Characters Details" customClass="CharactersDetailsVC" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharactersDetails" id="3OS-fS-chm" userLabel="Characters Details" customClass="CharactersDetailsVC" customModule="Marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBO-fy-PtK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
