@@ -14,11 +14,15 @@ class CharactersListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Data
+    
+    var dataTask: URLSessionDataTask?
+
     // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        fetchCharacters()
     }
 }
