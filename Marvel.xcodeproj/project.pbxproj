@@ -24,6 +24,7 @@
 		102D7A092084C8F800BC591B /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A082084C8F800BC591B /* Events.swift */; };
 		102D7A0D2084CACB00BC591B /* CharactersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A0C2084CACB00BC591B /* CharactersListVC.swift */; };
 		102D7A0F2084CADA00BC591B /* CharactersDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A0E2084CADA00BC591B /* CharactersDetailsVC.swift */; };
+		102D7A122084CC5300BC591B /* CharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A112084CC5300BC591B /* CharactersCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		102D7A082084C8F800BC591B /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		102D7A0C2084CACB00BC591B /* CharactersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListVC.swift; sourceTree = "<group>"; };
 		102D7A0E2084CADA00BC591B /* CharactersDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailsVC.swift; sourceTree = "<group>"; };
+		102D7A112084CC5300BC591B /* CharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharactersCell.swift; path = ../Views/CharactersCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				102D79C62084B17800BC591B /* AppDelegate.swift */,
 				102D79CA2084B17800BC591B /* Main.storyboard */,
+				102D7A132084CC5800BC591B /* Views */,
 				102D7A102084CADE00BC591B /* Controllers */,
 				102D7A0B2084C96300BC591B /* Protocols */,
 				102D7A0A2084C95B00BC591B /* Models */,
@@ -177,6 +180,15 @@
 				102D7A0E2084CADA00BC591B /* CharactersDetailsVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		102D7A132084CC5800BC591B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A112084CC5300BC591B /* CharactersCell.swift */,
+			);
+			name = Views;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +327,7 @@
 				102D79FF2084BF7D00BC591B /* Series.swift in Sources */,
 				102D79F52084B4FB00BC591B /* Character.swift in Sources */,
 				102D7A072084C88500BC591B /* Resource.swift in Sources */,
+				102D7A122084CC5300BC591B /* CharactersCell.swift in Sources */,
 				102D7A0D2084CACB00BC591B /* CharactersListVC.swift in Sources */,
 				102D79FD2084BF2900BC591B /* CollectionInfo.swift in Sources */,
 				102D79F72084BD6900BC591B /* Thumbnail.swift in Sources */,

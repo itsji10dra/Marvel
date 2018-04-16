@@ -10,6 +10,12 @@ import UIKit
 
 class CharactersListVC: UIViewController {
 
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - View
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
