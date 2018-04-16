@@ -218,8 +218,7 @@
 			children = (
 				102D7A112084CC5300BC591B /* CharactersCell.swift */,
 			);
-			name = Views;
-			path = "New Group";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		102D7A162084D18300BC591B /* Network */ = {
