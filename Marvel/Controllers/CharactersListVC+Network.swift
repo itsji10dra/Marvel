@@ -21,7 +21,7 @@ extension CharactersListVC {
         
         dataTask?.cancel()
         
-        dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
             
             let showError: ((String) -> Void) = { message in
                 DispatchQueue.main.async {
