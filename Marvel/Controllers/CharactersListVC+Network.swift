@@ -17,6 +17,8 @@ extension CharactersListVC {
                                           isAuthenticated: true,
                                           withLimitingParameters: true) else { return }
         
+        LoadingIndicator.startAnimating()
+        
         dataTask?.cancel()
         
         dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
@@ -26,6 +28,8 @@ extension CharactersListVC {
                     self?.showErrorAlert(with: message)
                 }
             }
+            
+            LoadingIndicator.stopAnimating()
             
             if error == nil,
                 let data = data {
