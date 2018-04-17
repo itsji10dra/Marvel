@@ -39,6 +39,8 @@
 		102D7A3C20851BED00BC591B /* StoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A3B20851BED00BC591B /* StoryType.swift */; };
 		10CB98F120864D5400F0DFE8 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */; };
 		10CB98F320864FBE00F0DFE8 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F220864FBE00F0DFE8 /* LoadingIndicator.swift */; };
+		10CB98F52086583700F0DFE8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F42086583700F0DFE8 /* ImageCache.swift */; };
+		10CB98F720865B2E00F0DFE8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F620865B2E00F0DFE8 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		102D7A3B20851BED00BC591B /* StoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryType.swift; sourceTree = "<group>"; };
 		10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		10CB98F220864FBE00F0DFE8 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		10CB98F42086583700F0DFE8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		10CB98F620865B2E00F0DFE8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
 				10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */,
+				10CB98F42086583700F0DFE8 /* ImageCache.swift */,
 				102D7A342085135700BC591B /* UI */,
 				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A162084D18300BC591B /* Network */,
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				102D7A2D2084EF0C00BC591B /* URL+Extension.swift */,
+				10CB98F620865B2E00F0DFE8 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -425,9 +431,11 @@
 				102D79F72084BD6900BC591B /* Thumbnail.swift in Sources */,
 				102D7A332085134D00BC591B /* Navigation.swift in Sources */,
 				102D7A222084DED400BC591B /* ResponseData.swift in Sources */,
+				10CB98F720865B2E00F0DFE8 /* UIImage+Extension.swift in Sources */,
 				102D79C72084B17800BC591B /* AppDelegate.swift in Sources */,
 				102D7A032084C62F00BC591B /* Story.swift in Sources */,
 				102D7A3C20851BED00BC591B /* StoryType.swift in Sources */,
+				10CB98F52086583700F0DFE8 /* ImageCache.swift in Sources */,
 				102D7A052084C71700BC591B /* URLInfo.swift in Sources */,
 				102D7A0F2084CADA00BC591B /* CharactersDetailsVC.swift in Sources */,
 			);

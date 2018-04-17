@@ -1,0 +1,80 @@
+//
+//  ImageCache.swift
+//  Marvel
+//
+//  Created by Jitendra on 17/04/18.
+//  Copyright © 2018 Jitendra Gandhi. All rights reserved.
+//
+
+import UIKit
+import Foundation
+
+class ImageCache {
+    
+    public static let shared = ImageCache(name: "shared")
+
+    private let memoryCache = NSCache<NSString, UIImage>()
+
+    var maxMemoryCost: UInt = 0 {
+        didSet {
+            self.memoryCache.totalCostLimit = Int(maxMemoryCost)
+        }
+    }
+    
+    private let processQueue: DispatchQueue
+    
+    let imageCost: ((UIImage) -> Int) = { image in
+        return Int(image.size.height * image.size.width * image.scale)
+    }
+
+    // MARK: - Initializer
+    
+    public init(name: String) {
+        
+        let cacheName = "com.itsji10dra.Marvel.\(name)"
+        memoryCache.name = cacheName
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clearMemoryCache),
+                                               name: .UIApplicationDidReceiveMemoryWarning,
+                                               object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func store(_ image: UIImage,
+               forKey key: String,
+               completionHandler: (() -> Void)? = nil) {
+        
+        memoryCache.setObject(image, forKey: key as NSString, cost: imageCost(image))
+        
+        if let handler = completionHandler {
+            DispatchQueue.main.async {
+                handler()
+            }
+        }
+    }
+    
+    func removeImage(forKey key: String,
+                     completionHandler: (() -> Void)? = nil) {
+        
+        memoryCache.removeObject(forKey: computedKey as NSString)
+        
+        if let handler = completionHandler {
+            DispatchQueue.main.async {
+                handler()
+            }
+        }
+    }
+    
+    open func retrieve(forKey key: String) -> UIImage? {
+        
+        return memoryCache.object(forKey: key as NSString) as? UIImage
+    
+    @objc
+    public func clearMemoryCache() {
+        memoryCache.removeAllObjects()
+    }
+}
