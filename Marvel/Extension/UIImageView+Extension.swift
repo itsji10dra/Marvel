@@ -1,5 +1,5 @@
 //
-//  UIImage+Extension.swift
+//  UIImageView+Extension.swift
 //  Marvel
 //
 //  Created by Jitendra on 17/04/18.
