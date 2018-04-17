@@ -55,9 +55,8 @@ class CharactersDetailsVC: UIViewController {
         let hasDescription = character.description?.isEmpty != true
         descriptionLabel.text = hasDescription ? character.description : "There is no description for this character."
         
-        if let imageURL = character.thumbnail?.thumbURL,
-            let data = try? Data(contentsOf: imageURL) {
-            thumbImageView.image = UIImage(data: data)
+        if let imageURL = character.thumbnail?.thumbURL {
+            thumbImageView.setImage(with: imageURL)
         }
     }
     
