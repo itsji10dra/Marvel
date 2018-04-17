@@ -47,7 +47,7 @@ class ImageCache {
                completionHandler: (() -> Void)? = nil) {
         
         memoryCache.setObject(image, forKey: key as NSString, cost: imageCost(image))
-        
+                
         if let handler = completionHandler {
             DispatchQueue.main.async {
                 handler()

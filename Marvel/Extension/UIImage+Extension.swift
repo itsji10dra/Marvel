@@ -13,5 +13,10 @@ extension UIImageView {
     
     func setImage(with url: URL) {
         
+        ImageDownloadCachingManager.shared.downloadAndCacheImage(with: url) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.image = image
+            }
+        }
     }
 }
