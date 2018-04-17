@@ -25,7 +25,7 @@ class ImageDownloader: NSObject {
     
     private var session: URLSession!
     
-    var fetchLoads = [URL: ImageFetchLoad]()
+    private var fetchLoads = [URL: ImageFetchLoad]()
 
     override init() {
         super.init()
@@ -83,9 +83,7 @@ class ImageDownloader: NSObject {
                 image = newImage
             }
 
-            DispatchQueue.main.async {
-                handler?(image, nil)
-            }
+            handler?(image, nil)
         }
         
         fetchLoads.removeValue(forKey: url)
