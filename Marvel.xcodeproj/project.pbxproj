@@ -41,6 +41,8 @@
 		10CB98F320864FBE00F0DFE8 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F220864FBE00F0DFE8 /* LoadingIndicator.swift */; };
 		10CB98F52086583700F0DFE8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F42086583700F0DFE8 /* ImageCache.swift */; };
 		10CB98F720865B2E00F0DFE8 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F620865B2E00F0DFE8 /* UIImage+Extension.swift */; };
+		10CB98F92086764000F0DFE8 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F82086764000F0DFE8 /* ImageDownloader.swift */; };
+		10CB98FC20868DDF00F0DFE8 /* ImageDownloadCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98FB20868DDF00F0DFE8 /* ImageDownloadCachingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		10CB98F220864FBE00F0DFE8 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		10CB98F42086583700F0DFE8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		10CB98F620865B2E00F0DFE8 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		10CB98F82086764000F0DFE8 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		10CB98FB20868DDF00F0DFE8 /* ImageDownloadCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadCachingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +159,7 @@
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
 				10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */,
-				10CB98F42086583700F0DFE8 /* ImageCache.swift */,
+				10CB98FA20868D0400F0DFE8 /* Caching */,
 				102D7A342085135700BC591B /* UI */,
 				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A162084D18300BC591B /* Network */,
@@ -276,6 +280,16 @@
 				102D7A3B20851BED00BC591B /* StoryType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		10CB98FA20868D0400F0DFE8 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				10CB98F42086583700F0DFE8 /* ImageCache.swift */,
+				10CB98F82086764000F0DFE8 /* ImageDownloader.swift */,
+				10CB98FB20868DDF00F0DFE8 /* ImageDownloadCachingManager.swift */,
+			);
+			path = Caching;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,9 +436,11 @@
 				102D7A262084E20F00BC591B /* Initializer.swift in Sources */,
 				102D79F52084B4FB00BC591B /* Character.swift in Sources */,
 				102D7A072084C88500BC591B /* Resource.swift in Sources */,
+				10CB98FC20868DDF00F0DFE8 /* ImageDownloadCachingManager.swift in Sources */,
 				102D7A122084CC5300BC591B /* CharactersCell.swift in Sources */,
 				102D7A0D2084CACB00BC591B /* CharactersListVC.swift in Sources */,
 				102D7A3920851B8100BC591B /* URLType.swift in Sources */,
+				10CB98F92086764000F0DFE8 /* ImageDownloader.swift in Sources */,
 				102D7A1A2084D32F00BC591B /* URLManager.swift in Sources */,
 				102D79FD2084BF2900BC591B /* CollectionInfo.swift in Sources */,
 				102D7A2E2084EF0C00BC591B /* URL+Extension.swift in Sources */,

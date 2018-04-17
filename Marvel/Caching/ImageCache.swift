@@ -20,10 +20,8 @@ class ImageCache {
             self.memoryCache.totalCostLimit = Int(maxMemoryCost)
         }
     }
-    
-    private let processQueue: DispatchQueue
-    
-    let imageCost: ((UIImage) -> Int) = { image in
+        
+    private let imageCost: ((UIImage) -> Int) = { image in
         return Int(image.size.height * image.size.width * image.scale)
     }
 
@@ -60,7 +58,7 @@ class ImageCache {
     func removeImage(forKey key: String,
                      completionHandler: (() -> Void)? = nil) {
         
-        memoryCache.removeObject(forKey: computedKey as NSString)
+        memoryCache.removeObject(forKey: key as NSString)
         
         if let handler = completionHandler {
             DispatchQueue.main.async {
@@ -71,10 +69,11 @@ class ImageCache {
     
     open func retrieve(forKey key: String) -> UIImage? {
         
-        return memoryCache.object(forKey: key as NSString) as? UIImage
-    
+        return memoryCache.object(forKey: key as NSString)
+    }
+        
     @objc
-    public func clearMemoryCache() {
+    func clearMemoryCache() {
         memoryCache.removeAllObjects()
     }
 }
