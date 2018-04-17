@@ -37,6 +37,7 @@
 		102D7A332085134D00BC591B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A322085134D00BC591B /* Navigation.swift */; };
 		102D7A3920851B8100BC591B /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A3820851B8100BC591B /* URLType.swift */; };
 		102D7A3C20851BED00BC591B /* StoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102D7A3B20851BED00BC591B /* StoryType.swift */; };
+		10CB98F120864D5400F0DFE8 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		102D7A322085134D00BC591B /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		102D7A3820851B8100BC591B /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
 		102D7A3B20851BED00BC591B /* StoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryType.swift; sourceTree = "<group>"; };
+		10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				102D79C62084B17800BC591B /* AppDelegate.swift */,
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
+				10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */,
 				102D7A342085135700BC591B /* UI */,
 				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A162084D18300BC591B /* Network */,
@@ -403,6 +406,7 @@
 				102D7A092084C8F800BC591B /* Events.swift in Sources */,
 				102D7A242084DFA900BC591B /* Alias.swift in Sources */,
 				102D7A152084CF5D00BC591B /* Configuration.swift in Sources */,
+				10CB98F120864D5400F0DFE8 /* ErrorMessage.swift in Sources */,
 				102D79FF2084BF7D00BC591B /* Series.swift in Sources */,
 				102D7A202084DE8500BC591B /* Response.swift in Sources */,
 				102D7A262084E20F00BC591B /* Initializer.swift in Sources */,

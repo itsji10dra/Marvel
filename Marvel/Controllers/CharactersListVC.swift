@@ -41,10 +41,10 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
         
         let character = charactersArray[indexPath.row]
         
-//        if let imageURL = character.thumbnail?.thumbURL,
-//            let data = try? Data(contentsOf: imageURL) {
-//            cell.thumbImageView.image = UIImage(data: data)
-//        }
+        if let imageURL = character.thumbnail?.thumbURL,
+            let data = try? Data(contentsOf: imageURL) {
+            cell.thumbImageView.image = UIImage(data: data)
+        }
         
         cell.nameLabel.text = character.name
         

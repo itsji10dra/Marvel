@@ -6,35 +6,72 @@
 //  Copyright © 2018 Jitendra Gandhi. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 extension CharactersListVC {
     
     func fetchCharacters() {
         
-        guard let url = URLManager.getURL(for: .publicCharacters, isAuthenticated: true, withLimitingParameters: true) else { return }
+        guard let url = URLManager.getURL(for: .publicCharacters,
+                                          isAuthenticated: true,
+                                          withLimitingParameters: true) else { return }
         
         dataTask?.cancel()
         
         dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             
-            guard let data = data else { return }
+            let showError: ((String) -> Void) = { message in
+                DispatchQueue.main.async {
+                    self?.showErrorAlert(with: message)
+                }
+            }
             
-            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            if error == nil,
+                let data = data {
 
-            guard let json = jsonObject as? JSON else { return }
-            
-            let response = Response<Character>.init(with: json)
-            
-            guard let charactersArray = response.data?.results else { return }
-            
-            self?.charactersArray = charactersArray
-            
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                
+                guard let json = jsonObject as? JSON else {
+                    showError(ErrorMessage.dataParsingErrorMsg)
+                    return
+                }
+                
+                let response = Response<Character>.init(with: json)
+                
+                if response.code == 200 {
+                    
+                    guard let charactersArray = response.data?.results else { return }
+                    
+                    self?.charactersArray = charactersArray
+                    
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                } else {
+                    showError(ErrorMessage.unknownErrorMsg)
+                }
+            } else {
+               showError(error?.localizedDescription ?? ErrorMessage.unknownErrorMsg)
             }
         }
         
         dataTask?.resume()
+    }
+    
+    // MARK: - Private Methods
+
+    private func showErrorAlert(with message: String) {
+        
+        let alertController = UIAlertController(title: "Error",
+                                                message: message,
+                                                preferredStyle: .alert)
+        
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            self?.fetchCharacters()
+        }
+        alertController.addAction(retryAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
