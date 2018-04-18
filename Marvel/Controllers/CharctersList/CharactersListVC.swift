@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
 
     // MARK: - IBOutlets
 
@@ -56,6 +56,16 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
         
         let character = charactersArray[indexPath.row]
         pushDetailsScene(with: character)
+    }
+    
+    // MARK: - UITableViewDataSourcePrefetching
+
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        let urls = indexPaths.compactMap { charactersArray[$0.row].thumbnail?.thumbURL }
+        
+        urls.forEach {
+            ImageDownloadCachingManager.shared.downloadAndCacheImage(with: $0)
+        }
     }
 
     // MARK: - Navigation
