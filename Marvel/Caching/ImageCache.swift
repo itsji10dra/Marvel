@@ -38,13 +38,17 @@ class ImageCache {
                                                object: nil)
     }
 
+    // MARK: - DeInitializer
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func store(_ image: UIImage,
-               forKey key: String,
-               completionHandler: (() -> Void)? = nil) {
+    // MARK: - Public Methods
+
+    public func store(_ image: UIImage,
+                      forKey key: String,
+                      completionHandler: (() -> Void)? = nil) {
         
         memoryCache.setObject(image, forKey: key as NSString, cost: imageCost(image))
                 
@@ -55,8 +59,8 @@ class ImageCache {
         }
     }
     
-    func removeImage(forKey key: String,
-                     completionHandler: (() -> Void)? = nil) {
+    public func removeImage(forKey key: String,
+                            completionHandler: (() -> Void)? = nil) {
         
         memoryCache.removeObject(forKey: key as NSString)
         
@@ -67,13 +71,13 @@ class ImageCache {
         }
     }
     
-    open func retrieve(forKey key: String) -> UIImage? {
+    public func retrieve(forKey key: String) -> UIImage? {
         
         return memoryCache.object(forKey: key as NSString)
     }
         
     @objc
-    func clearMemoryCache() {
+    public func clearMemoryCache() {
         memoryCache.removeAllObjects()
     }
 }
