@@ -172,7 +172,6 @@
 				102D79C62084B17800BC591B /* AppDelegate.swift */,
 				102D79CA2084B17800BC591B /* Main.storyboard */,
 				102D7A1D2084DE0900BC591B /* Alias.swift */,
-				10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */,
 				10CB98FA20868D0400F0DFE8 /* Caching */,
 				102D7A2F2084EF0F00BC591B /* Extension */,
 				102D7A342085135700BC591B /* UI */,
@@ -257,6 +256,7 @@
 				102D7A142084CF5D00BC591B /* Configuration.swift */,
 				102D7A172084D1B700BC591B /* EndPoint.swift */,
 				102D7A192084D32F00BC591B /* URLManager.swift */,
+				10CB98F020864D5400F0DFE8 /* ErrorMessage.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
