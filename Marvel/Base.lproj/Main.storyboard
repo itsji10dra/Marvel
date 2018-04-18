@@ -161,7 +161,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Iqy-0k-Hrx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-61-KuK">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-61-KuK">
                                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="32"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -181,7 +181,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-yB-TLJ">
                                                                 <rect key="frame" x="0.0" y="60" width="359" height="227"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qc-N1-s6X">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qc-N1-s6X">
                                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="209"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <nil key="textColor"/>
@@ -257,6 +257,7 @@
                     <connections>
                         <outlet property="bottomView" destination="c7h-qg-gml" id="LBx-1B-x4h"/>
                         <outlet property="descriptionLabel" destination="K4W-m4-VgG" id="nSF-MZ-JcA"/>
+                        <outlet property="detailsStackView" destination="Hod-wt-BcP" id="cfm-8U-uQC"/>
                         <outlet property="nameLabel" destination="OpC-fU-UcU" id="o69-lN-sA8"/>
                         <outlet property="thumbImageView" destination="IcI-gY-Nih" id="4Yf-N5-AMs"/>
                     </connections>

@@ -15,6 +15,8 @@ class CharactersDetailsVC: UIViewController {
 
     @IBOutlet weak var thumbImageView: UIImageView!
     
+    @IBOutlet weak var detailsStackView: UIStackView!
+
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -57,6 +59,32 @@ class CharactersDetailsVC: UIViewController {
         
         if let imageURL = character.thumbnail?.thumbURL {
             thumbImageView.setImage(with: imageURL)
+        }
+        
+        let expandableView: ((String, [String]) -> ExpandableCharacterDetailView) = { title, details in
+            let detailView = ExpandableCharacterDetailView()
+            detailView.customise(with: title, detailsArray: details)
+            return detailView
+        }
+        
+        if let comicsNameArray = character.comicsInfo?.items?.compactMap({ $0.name }) {
+            let view = expandableView("Comics", comicsNameArray)
+            detailsStackView.addArrangedSubview(view)
+        }
+        
+        if let seriesNameArray = character.seriesInfo?.items?.compactMap({ $0.name }) {
+            let view = expandableView("Series", seriesNameArray)
+            detailsStackView.addArrangedSubview(view)
+        }
+
+        if let storiesNameArray = character.storiesInfo?.items?.compactMap({ $0.name }) {
+            let view = expandableView("Stories", storiesNameArray)
+            detailsStackView.addArrangedSubview(view)
+        }
+
+        if let eventsNameArray = character.eventsInfo?.items?.compactMap({ $0.name }) {
+            let view = expandableView("Events", eventsNameArray)
+            detailsStackView.addArrangedSubview(view)
         }
     }
     
