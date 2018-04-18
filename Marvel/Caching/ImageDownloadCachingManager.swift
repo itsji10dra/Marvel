@@ -11,11 +11,15 @@ import Foundation
 
 class ImageDownloadCachingManager {
     
+    // MARK: - Data
+    
     static let shared = ImageDownloadCachingManager()
     
     var cache: ImageCache
 
     var downloader: ImageDownloader
+
+    // MARK: - Initializer
 
     convenience init() {
         self.init(downloader: .shared, cache: .shared)
@@ -26,9 +30,11 @@ class ImageDownloadCachingManager {
         self.cache = cache
     }
     
+    // MARK: - Public Methods
+
     @discardableResult
-    func downloadAndCacheImage(with url: URL,
-                               completionHandler: ((UIImage, URL) -> Void)? = nil) -> URLSessionDataTask? {
+    public func downloadAndCacheImage(with url: URL,
+                                      completionHandler: ((UIImage, URL) -> Void)? = nil) -> URLSessionDataTask? {
         
         let key = url.absoluteString
 

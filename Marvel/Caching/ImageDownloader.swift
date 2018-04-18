@@ -19,6 +19,8 @@ class ImageDownloader: NSObject {
         var dataTask: URLSessionDataTask?
     }
 
+    // MARK: - Data
+
     public static let shared = ImageDownloader()
 
     private var downloadTimeout: TimeInterval = 15.0
@@ -27,18 +29,24 @@ class ImageDownloader: NSObject {
     
     private var fetchLoads = [URL: ImageFetchLoad]()
 
+    // MARK: - Initializer
+
     override init() {
         super.init()
         
         self.session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: nil)
     }
     
+    // MARK: - DeInitializer
+
     deinit {
         session.invalidateAndCancel()
     }
     
-    func downloadImage(with url: URL,
-                       completionHandler: ImageDownloaderCompletionHandler? = nil) -> URLSessionDataTask {
+    // MARK: - Public Methods
+
+    public func downloadImage(with url: URL,
+                              completionHandler: ImageDownloaderCompletionHandler? = nil) -> URLSessionDataTask {
         
         func createNewDataTask(from url: URL) -> URLSessionDataTask {
             let request = URLRequest(url: url,
@@ -63,6 +71,8 @@ class ImageDownloader: NSObject {
         return loadObjectForURL.dataTask ?? URLSessionDataTask()
     }
     
+    // MARK: - Private Methods
+
     private func processImage(for url: URL) {
         
         guard let fetchLoad = fetchLoads[url] else { return }

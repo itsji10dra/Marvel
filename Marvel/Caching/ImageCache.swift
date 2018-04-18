@@ -11,6 +11,8 @@ import Foundation
 
 class ImageCache {
     
+    // MARK: - Data
+    
     public static let shared = ImageCache(name: "shared")
 
     private let memoryCache = NSCache<NSString, UIImage>()
