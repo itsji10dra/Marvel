@@ -49,7 +49,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-zT-Fg4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-zT-Fg4">
                                                     <rect key="frame" x="21" y="0.0" width="333" height="250"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="5jx-zG-Zga"/>
@@ -139,7 +139,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATn-rz-maz">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-gY-Nih">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-gY-Nih">
                                                         <rect key="frame" x="20.5" y="0.0" width="333" height="250"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="IcI-gY-Nih" secondAttribute="height" multiplier="4:3" id="6K1-pS-1y5"/>
@@ -228,7 +228,4 @@
             <point key="canvasLocation" x="1866" y="-564"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="character-placeholder" width="250" height="250"/>
-    </resources>
 </document>
