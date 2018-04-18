@@ -86,7 +86,7 @@ class ExpandableCharacterDetailView: UIView {
         detailsArray.enumerated().forEach { index, value in
             
             let view = self.getDetailsView(with: value)
-            view.isHidden = index > defaultNumberOfVisibleContent
+            view.isHidden = (index + 1) > defaultNumberOfVisibleContent
             self.detailsStackView.addArrangedSubview(view)
         }
         

@@ -75,6 +75,8 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="K3c-zT-Fg4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="igk-kX-B0N" secondAttribute="leading" id="XOb-1k-XNJ"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K3c-zT-Fg4" secondAttribute="trailing" id="ZAe-EM-pu9"/>
                                                 <constraint firstItem="K3c-zT-Fg4" firstAttribute="centerX" secondItem="igk-kX-B0N" secondAttribute="centerX" id="atU-hr-ZLm"/>
                                                 <constraint firstItem="QWk-NF-SbK" firstAttribute="leading" secondItem="igk-kX-B0N" secondAttribute="leading" id="iq6-X9-v8F"/>
                                                 <constraint firstAttribute="bottom" secondItem="QWk-NF-SbK" secondAttribute="bottom" id="nJd-7Q-UOL"/>
@@ -146,7 +148,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="IcI-gY-Nih" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ATn-rz-maz" secondAttribute="leading" id="9lP-Ju-Lkc"/>
                                                     <constraint firstItem="IcI-gY-Nih" firstAttribute="centerX" secondItem="ATn-rz-maz" secondAttribute="centerX" id="Fjn-NA-za9"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IcI-gY-Nih" secondAttribute="trailing" id="FvL-jN-ivP"/>
                                                     <constraint firstItem="IcI-gY-Nih" firstAttribute="top" secondItem="ATn-rz-maz" secondAttribute="top" id="JGq-ZU-2jD"/>
                                                     <constraint firstAttribute="bottom" secondItem="IcI-gY-Nih" secondAttribute="bottom" id="d6h-kG-Lhd"/>
                                                     <constraint firstAttribute="height" constant="250" id="sl2-8V-027"/>
