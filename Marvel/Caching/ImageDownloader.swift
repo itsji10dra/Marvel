@@ -110,7 +110,5 @@ extension ImageDownloader: URLSessionDataDelegate {
         }
         
         processImage(for: url)
-        
-        print("Download Complete")
     }
 }
