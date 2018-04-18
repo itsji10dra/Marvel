@@ -17,10 +17,6 @@ class CharactersDetailsVC: UIViewController {
     
     @IBOutlet weak var detailsStackView: UIStackView!
 
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-
     @IBOutlet weak var bottomView: UIView!
 
     // MARK: - Data
@@ -51,16 +47,26 @@ class CharactersDetailsVC: UIViewController {
         guard let character = character else { return }
         
         title = character.name
-        
-        nameLabel.text = character.name
-        
-        let hasDescription = character.description?.isEmpty != true
-        descriptionLabel.text = hasDescription ? character.description : "There is no description for this character."
-        
+
         if let imageURL = character.thumbnail?.thumbURL {
             thumbImageView.setImage(with: imageURL)
         }
         
+        let detailView: ((String, String) -> CharacterDetailView) = { title, description in
+            let view = CharacterDetailView()
+            view.customise(with: title, description: description)
+            return view
+        }
+        
+        let nameView = detailView("Name", character.name ?? "")
+        detailsStackView.addArrangedSubview(nameView)
+        
+        let hasDescription = character.description?.isEmpty != true
+        let descriptionText = hasDescription ? character.description! : "There is no description for this character."
+
+        let descriptionView = detailView("Description", descriptionText)
+        detailsStackView.addArrangedSubview(descriptionView)
+
         let expandableView: ((String, [String]) -> ExpandableCharacterDetailView) = { title, details in
             let detailView = ExpandableCharacterDetailView()
             detailView.customise(with: title, detailsArray: details)

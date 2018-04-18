@@ -23,32 +23,32 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pjQ-5f-s47">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
+                    <rect key="frame" x="5" y="5" width="365" height="121"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-Iu-eOJ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
+                            <rect key="frame" x="0.0" y="0.0" width="365" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I5c-qd-CiP">
-                            <rect key="frame" x="0.0" y="16" width="375" height="80"/>
+                            <rect key="frame" x="0.0" y="16" width="365" height="80"/>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNN-zl-tvd">
-                            <rect key="frame" x="0.0" y="96" width="375" height="35"/>
+                            <rect key="frame" x="0.0" y="96" width="365" height="25"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwL-XA-WTR" userLabel="Load More">
-                                    <rect key="frame" x="0.0" y="2.5" width="90" height="30"/>
+                                    <rect key="frame" x="0.0" y="-1.5" width="80" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <state key="normal" title="Show more..."/>
                                     <connections>
                                         <action selector="loadMoreAction:" destination="-1" eventType="touchUpInside" id="s57-qB-tVw"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="HwL-XA-WTR" firstAttribute="leading" secondItem="TNN-zl-tvd" secondAttribute="leading" id="GzW-jd-oQb"/>
-                                <constraint firstAttribute="height" constant="35" id="WBq-hC-qRs"/>
+                                <constraint firstAttribute="height" constant="25" id="WBq-hC-qRs"/>
                                 <constraint firstItem="HwL-XA-WTR" firstAttribute="centerY" secondItem="TNN-zl-tvd" secondAttribute="centerY" id="gGC-sj-wig"/>
                             </constraints>
                         </view>
@@ -57,10 +57,10 @@
             </subviews>
             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pjQ-5f-s47" firstAttribute="leading" secondItem="xbw-Jb-Eik" secondAttribute="leading" id="3vT-al-pYx"/>
-                <constraint firstAttribute="trailing" secondItem="pjQ-5f-s47" secondAttribute="trailing" id="MVh-3k-HfD"/>
-                <constraint firstItem="pjQ-5f-s47" firstAttribute="top" secondItem="xbw-Jb-Eik" secondAttribute="top" id="b3i-o4-jXq"/>
-                <constraint firstAttribute="bottom" secondItem="pjQ-5f-s47" secondAttribute="bottom" id="mLC-a1-GC4"/>
+                <constraint firstItem="pjQ-5f-s47" firstAttribute="leading" secondItem="xbw-Jb-Eik" secondAttribute="leading" constant="5" id="3vT-al-pYx"/>
+                <constraint firstAttribute="trailing" secondItem="pjQ-5f-s47" secondAttribute="trailing" constant="5" id="MVh-3k-HfD"/>
+                <constraint firstItem="pjQ-5f-s47" firstAttribute="top" secondItem="xbw-Jb-Eik" secondAttribute="top" constant="5" id="b3i-o4-jXq"/>
+                <constraint firstAttribute="bottom" secondItem="pjQ-5f-s47" secondAttribute="bottom" constant="5" id="mLC-a1-GC4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-122" y="-93"/>

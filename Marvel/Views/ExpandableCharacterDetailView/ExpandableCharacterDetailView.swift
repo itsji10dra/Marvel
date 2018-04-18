@@ -23,9 +23,11 @@ class ExpandableCharacterDetailView: UIView {
     
     // MARK: - Data
     
-    let defaultNumberOfVisibleContent: Int = 3
+    private let bulletCharacter = "•"
     
-    var expandableViewsCount: Int {
+    private let defaultNumberOfVisibleContent: Int = 3
+    
+    private var expandableViewsCount: Int {
         return detailsStackView.arrangedSubviews.count - defaultNumberOfVisibleContent
     }
 
@@ -69,7 +71,7 @@ class ExpandableCharacterDetailView: UIView {
     private func getDetailsView(with title: String) -> UILabel {
         
         let label = UILabel()
-        label.text = " • " + title
+        label.text = " \(bulletCharacter) " + title
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 15)
         return label
