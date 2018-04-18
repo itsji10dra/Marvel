@@ -9,13 +9,30 @@
 import UIKit
 import Foundation
 
+private var kURLKey: Void?
+
 extension UIImageView {
+    
+    public var imageURL: URL? {
+        set { objc_setAssociatedObject(self, &kURLKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+        get { return objc_getAssociatedObject(self, &kURLKey) as? URL }
+    }
     
     func setImage(with url: URL) {
         
-        ImageDownloadCachingManager.shared.downloadAndCacheImage(with: url) { [weak self] image in
+        self.imageURL = url
+        self.image = nil
+
+        ImageDownloadCachingManager.shared.downloadAndCacheImage(with: url) { [weak self] (image, url) in
+            
             DispatchQueue.main.async {
-                self?.image = image
+                
+                guard let strongSelf = self,
+                    url == strongSelf.imageURL else {
+                    return
+                }
+
+                strongSelf.image = image
             }
         }
     }

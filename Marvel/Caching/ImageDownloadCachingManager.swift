@@ -28,12 +28,12 @@ class ImageDownloadCachingManager {
     
     @discardableResult
     func downloadAndCacheImage(with url: URL,
-                               completionHandler: @escaping ((UIImage) -> Void)) -> URLSessionDataTask? {
+                               completionHandler: @escaping ((UIImage, URL) -> Void)) -> URLSessionDataTask? {
         
         let key = url.absoluteString
 
         if let image = cache.retrieve(forKey: key) {
-            completionHandler(image)
+            completionHandler(image, url)
             return nil
         }
 
@@ -42,7 +42,7 @@ class ImageDownloadCachingManager {
                 
             if let image = image {
                 self?.cache.store(image, forKey: key)
-                completionHandler(image)
+                completionHandler(image, url)
             }
         })
     }

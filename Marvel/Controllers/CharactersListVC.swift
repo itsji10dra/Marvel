@@ -67,4 +67,8 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
         detailsVC.character = character
         navigationController?.pushViewController(detailsVC, animated: true)
     }
+    
+    @IBAction func clearCache(_ sender: Any) {
+        ImageCache.shared.clearMemoryCache()
+    }
 }
