@@ -25,8 +25,27 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addRefreshControl()
         fetchCharacters()
-    }    
+    }
+    
+    // MARK: - DeInitializer
+    
+    deinit {
+        dataTask?.cancel()
+    }
+
+    // MARK: - Private
+    
+    private func addRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        let title = "Pull to refresh"
+        refreshControl.attributedTitle = NSAttributedString(string: title)
+        refreshControl.addTarget(self,
+                                 action: #selector(CharactersListVC.fetchCharacters),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
     
     // MARK: - UITableViewDataSource
 

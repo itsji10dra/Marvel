@@ -11,6 +11,7 @@ import Foundation
 
 extension CharactersListVC {
     
+    @objc
     func fetchCharacters() {
         
         guard let url = URLManager.getURL(for: .publicCharacters,
@@ -29,7 +30,12 @@ extension CharactersListVC {
                 }
             }
             
-            LoadingIndicator.stopAnimating()
+            defer {
+                LoadingIndicator.stopAnimating()
+                DispatchQueue.main.async {
+                    self?.tableView.refreshControl?.endRefreshing()
+                }
+            }
             
             if error == nil,
                 let data = data {
