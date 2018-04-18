@@ -107,13 +107,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Characters" id="EWA-ZQ-JHD">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="ib0-bV-bHt">
-                            <connections>
-                                <action selector="clearCache:" destination="BYZ-38-t0r" id="ASy-Ir-Jog"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Characters" id="EWA-ZQ-JHD"/>
                     <connections>
                         <outlet property="tableView" destination="tVO-Vn-exs" id="BNy-IV-QJe"/>
                         <segue destination="3OS-fS-chm" kind="show" identifier="CharactersDetails" id="hC1-6I-2ln"/>
