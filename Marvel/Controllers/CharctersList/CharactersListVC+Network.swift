@@ -12,13 +12,15 @@ import Foundation
 extension CharactersListVC {
     
     @objc
-    func fetchCharacters() {
+    func fetchCharacters(_ sender: Any?) {
         
         guard let url = URLManager.getURL(for: .publicCharacters,
                                           isAuthenticated: true,
                                           withLimitingParameters: true) else { return }
         
-        LoadingIndicator.startAnimating()
+        if sender is UIRefreshControl == false {
+            LoadingIndicator.startAnimating()
+        }
         
         dataTask?.cancel()
         
@@ -78,7 +80,7 @@ extension CharactersListVC {
                                                 preferredStyle: .alert)
         
         let retryAction = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
-            self?.fetchCharacters()
+            self?.fetchCharacters(nil)
         }
         alertController.addAction(retryAction)
         

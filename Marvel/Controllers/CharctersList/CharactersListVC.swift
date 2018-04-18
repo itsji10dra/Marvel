@@ -26,7 +26,7 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
 
         addRefreshControl()
-        fetchCharacters()
+        fetchCharacters(nil)
     }
     
     // MARK: - DeInitializer
@@ -42,7 +42,7 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
         let title = "Pull to refresh"
         refreshControl.attributedTitle = NSAttributedString(string: title)
         refreshControl.addTarget(self,
-                                 action: #selector(CharactersListVC.fetchCharacters),
+                                 action: #selector(CharactersListVC.fetchCharacters(_:)),
                                  for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
