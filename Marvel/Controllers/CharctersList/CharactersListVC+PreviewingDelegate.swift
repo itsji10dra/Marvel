@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jitendra Gandhi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension CharactersListVC: UIViewControllerPreviewingDelegate {
     
