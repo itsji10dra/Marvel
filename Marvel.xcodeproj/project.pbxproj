@@ -231,9 +231,8 @@
 		102D7A102084CADE00BC591B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				102D7A0C2084CACB00BC591B /* CharactersListVC.swift */,
-				102D7A1B2084DD9B00BC591B /* CharactersListVC+Network.swift */,
-				102D7A0E2084CADA00BC591B /* CharactersDetailsVC.swift */,
+				105BC84A2087B60F002D20BE /* CharctersList */,
+				105BC84B2087B621002D20BE /* CharctersDetails */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +310,23 @@
 				105BC8472087AB31002D20BE /* CharacterDetailView.xib */,
 			);
 			path = CharacterDetailView;
+			sourceTree = "<group>";
+		};
+		105BC84A2087B60F002D20BE /* CharctersList */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A0C2084CACB00BC591B /* CharactersListVC.swift */,
+				102D7A1B2084DD9B00BC591B /* CharactersListVC+Network.swift */,
+			);
+			path = CharctersList;
+			sourceTree = "<group>";
+		};
+		105BC84B2087B621002D20BE /* CharctersDetails */ = {
+			isa = PBXGroup;
+			children = (
+				102D7A0E2084CADA00BC591B /* CharactersDetailsVC.swift */,
+			);
+			path = CharctersDetails;
 			sourceTree = "<group>";
 		};
 		10CB98FA20868D0400F0DFE8 /* Caching */ = {
