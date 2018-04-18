@@ -48,16 +48,19 @@ class CharactersDetailsVC: UIViewController {
         
         title = character.name
 
+        //Image
         if let imageURL = character.thumbnail?.thumbURL {
             thumbImageView.setImage(with: imageURL)
         }
         
+        //CharacterDetailView
         let detailView: ((String, String) -> CharacterDetailView) = { title, description in
             let view = CharacterDetailView()
             view.customise(with: title, description: description)
             return view
         }
         
+        //Description
         let nameView = detailView("Name", character.name ?? "")
         detailsStackView.addArrangedSubview(nameView)
         
@@ -67,28 +70,37 @@ class CharactersDetailsVC: UIViewController {
         let descriptionView = detailView("Description", descriptionText)
         detailsStackView.addArrangedSubview(descriptionView)
 
+        //ExpandableCharacterDetailView
         let expandableView: ((String, [String]) -> ExpandableCharacterDetailView) = { title, details in
             let detailView = ExpandableCharacterDetailView()
             detailView.customise(with: title, detailsArray: details)
             return detailView
         }
         
-        if let comicsNameArray = character.comicsInfo?.items?.compactMap({ $0.name }) {
+        //Comics
+        if let comicsNameArray = character.comicsInfo?.items?.compactMap({ $0.name }),
+            comicsNameArray.isEmpty == false {
             let view = expandableView("Comics", comicsNameArray)
             detailsStackView.addArrangedSubview(view)
         }
         
-        if let seriesNameArray = character.seriesInfo?.items?.compactMap({ $0.name }) {
+        //Series
+        if let seriesNameArray = character.seriesInfo?.items?.compactMap({ $0.name }),
+            seriesNameArray.isEmpty == false  {
             let view = expandableView("Series", seriesNameArray)
             detailsStackView.addArrangedSubview(view)
         }
 
-        if let storiesNameArray = character.storiesInfo?.items?.compactMap({ $0.name }) {
+        //Stories
+        if let storiesNameArray = character.storiesInfo?.items?.compactMap({ $0.name }),
+            storiesNameArray.isEmpty == false  {
             let view = expandableView("Stories", storiesNameArray)
             detailsStackView.addArrangedSubview(view)
         }
 
-        if let eventsNameArray = character.eventsInfo?.items?.compactMap({ $0.name }) {
+        //Events
+        if let eventsNameArray = character.eventsInfo?.items?.compactMap({ $0.name }),
+            eventsNameArray.isEmpty == false  {
             let view = expandableView("Events", eventsNameArray)
             detailsStackView.addArrangedSubview(view)
         }
