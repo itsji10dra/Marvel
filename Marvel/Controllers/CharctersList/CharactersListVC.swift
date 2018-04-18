@@ -27,6 +27,7 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
 
         addRefreshControl()
         fetchCharacters(nil)
+        registerForceTouchIfAny()
     }
     
     // MARK: - DeInitializer
@@ -45,6 +46,12 @@ class CharactersListVC: UIViewController, UITableViewDataSource, UITableViewDele
                                  action: #selector(CharactersListVC.fetchCharacters(_:)),
                                  for: .valueChanged)
         tableView.refreshControl = refreshControl
+    }
+    
+    private func registerForceTouchIfAny() {
+        if isForceTouchEnabled {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
     }
     
     // MARK: - UITableViewDataSource
