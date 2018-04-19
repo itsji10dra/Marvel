@@ -64,7 +64,6 @@ extension CharactersListVC {
                     }
                 } catch {
                     showError(ErrorMessage.dataParsingErrorMsg)
-                    print(error)
                 }
             } else {
                showError(error?.localizedDescription ?? ErrorMessage.unknownErrorMsg)
