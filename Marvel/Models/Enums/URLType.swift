@@ -12,4 +12,16 @@ enum URLType: String, Decodable {
     case detail
     case wiki
     case comiclink
+    
+    init(from decoder: Decoder) throws {
+        
+        do {
+            let container = try decoder.singleValueContainer()
+            let value = try container.decode(String.self)
+            self = URLType.init(rawValue: value) ?? .unknown
+        }
+        catch {
+            self = .unknown
+        }
+    }
 }

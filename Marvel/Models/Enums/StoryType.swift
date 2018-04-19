@@ -12,16 +12,14 @@ enum StoryType: String, Decodable {
     case cover
     case interiorStory
     
-    enum Keys: String, CodingKey {
-        case rawValue
-    }
-    
-    init(from decoder: Decoder) {
+    init(from decoder: Decoder) throws {
+        
         do {
-            let container = try decoder.container(keyedBy: Keys.self)
-            let rawValue = try container.decode(String.self, forKey: .rawValue)
-            self = StoryType(rawValue: rawValue) ?? .unknown
-        } catch {
+            let container = try decoder.singleValueContainer()
+            let value = try container.decode(String.self)
+            self = StoryType.init(rawValue: value) ?? .unknown
+        }
+        catch {
             self = .unknown
         }
     }
