@@ -14,7 +14,7 @@ extension CharactersListVC {
     @objc
     func fetchCharacters(_ sender: Any?) {
         
-        guard let url = URLManager.getURL(for: .publicCharacters,
+        guard let url = URLManager.getURL(for: .publicCharacters, 
                                           isAuthenticated: true,
                                           withLimitingParameters: true) else { return }
         
@@ -43,9 +43,7 @@ extension CharactersListVC {
                 let data = data {
                 
                 do {
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .iso8601
-                    let response = try decoder.decode(Response<[Character]>.self, from: data)
+                    let response = try Mapper.decoder.decode(Response<[Character]>.self, from: data)
                     
                     if response.code == 200 {
                         
