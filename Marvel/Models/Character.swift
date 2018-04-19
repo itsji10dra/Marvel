@@ -16,7 +16,7 @@ struct Character: Decodable {
     
     var description: String?
     
-//    var modified: Date?
+    var modified: Date?
     
     var thumbnail: Thumbnail?
     

@@ -43,7 +43,9 @@ extension CharactersListVC {
                 let data = data {
                 
                 do {
-                    let response = try JSONDecoder().decode(Response<[Character]>.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let response = try decoder.decode(Response<[Character]>.self, from: data)
                     
                     if response.code == 200 {
                         
