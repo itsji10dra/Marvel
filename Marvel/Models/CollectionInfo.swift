@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CollectionInfo<T> where T: Resource, T: Initializer {
+struct CollectionInfo<T>: Decodable where T: Resource, T: Decodable {
     
     var available: Int?
     
@@ -18,19 +18,3 @@ struct CollectionInfo<T> where T: Resource, T: Initializer {
     
     var items: [T]?
 }
-
-extension CollectionInfo: Initializer {
-    
-    init(with json: JSON) {
-        self.available = json["available"] as? Int
-        self.collectionURI = URL(string: json["collectionURI"] as? String)
-        self.returned = json["returned"] as? Int
-        
-        if let items = json["items"] as? [JSON] {
-            self.items = items.compactMap { T.init(with: $0) }
-        } else {
-            self.items = nil
-        }
-    }
-}
-

@@ -8,17 +8,9 @@
 
 import Foundation
 
-struct Series: Resource {
+struct Series: Resource , Decodable{
     
     var resourceURI: URL?
     
     var name: String?
-}
-
-extension Series: Initializer {
-    
-    init(with json: JSON) {
-        self.resourceURI = URL(string: json["resourceURI"] as? String)
-        self.name = json["name"] as? String
-    }
 }

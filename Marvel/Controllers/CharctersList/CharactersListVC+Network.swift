@@ -41,27 +41,28 @@ extension CharactersListVC {
             
             if error == nil,
                 let data = data {
-
-                let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                 
-                guard let json = jsonObject as? JSON else {
-                    showError(ErrorMessage.dataParsingErrorMsg)
-                    return
-                }
-                
-                let response = Response<Character>.init(with: json)
-                
-                if response.code == 200 {
+                do {
+                    let response = try JSONDecoder().decode(Response<[Character]>.self, from: data)
                     
-                    guard let charactersArray = response.data?.results else { return }
-                    
-                    self?.charactersArray = charactersArray
-                    
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
+                    if response.code == 200 {
+                        
+                        guard let characters = response.data?.results else {
+                            showError(ErrorMessage.unknownErrorMsg)
+                            return
+                        }
+                        
+                        self?.charactersArray = characters
+                        
+                        DispatchQueue.main.async {
+                            self?.tableView.reloadData()
+                        }
+                    } else {
+                        showError(ErrorMessage.unknownErrorMsg)
                     }
-                } else {
-                    showError(ErrorMessage.unknownErrorMsg)
+                } catch {
+                    showError(ErrorMessage.dataParsingErrorMsg)
+                    print(error)
                 }
             } else {
                showError(error?.localizedDescription ?? ErrorMessage.unknownErrorMsg)

@@ -8,17 +8,9 @@
 
 import Foundation
 
-struct Comic: Resource {
+struct Comic: Resource, Decodable {
     
     var resourceURI: URL?
     
     var name: String?
-}
-
-extension Comic: Initializer {
-    
-    init(with json: JSON) {
-        self.resourceURI = URL(string: json["resourceURI"] as? String)
-        self.name = json["name"] as? String
-    }
 }

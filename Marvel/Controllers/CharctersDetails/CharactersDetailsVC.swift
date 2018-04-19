@@ -37,7 +37,7 @@ class CharactersDetailsVC: UIViewController {
 
     private func configureUI() {
         
-        guard character?.urls?.first(where: { $0.type == .details })?.url == nil else { return }
+        guard character?.urls?.first(where: { $0.type == .detail })?.url == nil else { return }
         
         bottomView.removeFromSuperview()
     }
@@ -78,28 +78,28 @@ class CharactersDetailsVC: UIViewController {
         }
         
         //Comics
-        if let comicsNameArray = character.comicsInfo?.items?.compactMap({ $0.name }),
+        if let comicsNameArray = character.comics?.items?.compactMap({ $0.name }),
             comicsNameArray.isEmpty == false {
             let view = expandableView("Comics", comicsNameArray)
             detailsStackView.addArrangedSubview(view)
         }
         
         //Series
-        if let seriesNameArray = character.seriesInfo?.items?.compactMap({ $0.name }),
+        if let seriesNameArray = character.series?.items?.compactMap({ $0.name }),
             seriesNameArray.isEmpty == false  {
             let view = expandableView("Series", seriesNameArray)
             detailsStackView.addArrangedSubview(view)
         }
 
         //Stories
-        if let storiesNameArray = character.storiesInfo?.items?.compactMap({ $0.name }),
+        if let storiesNameArray = character.stories?.items?.compactMap({ $0.name }),
             storiesNameArray.isEmpty == false  {
             let view = expandableView("Stories", storiesNameArray)
             detailsStackView.addArrangedSubview(view)
         }
 
         //Events
-        if let eventsNameArray = character.eventsInfo?.items?.compactMap({ $0.name }),
+        if let eventsNameArray = character.events?.items?.compactMap({ $0.name }),
             eventsNameArray.isEmpty == false  {
             let view = expandableView("Events", eventsNameArray)
             detailsStackView.addArrangedSubview(view)
@@ -110,7 +110,7 @@ class CharactersDetailsVC: UIViewController {
     
     @IBAction func showMoreDetailsAction(_ sender: Any) {
         
-        guard let url = character?.urls?.first(where: { $0.type == .details })?.url else { return }
+        guard let url = character?.urls?.first(where: { $0.type == .detail })?.url else { return }
 
         let safariVC = SFSafariViewController(url: url)
         navigationController?.present(safariVC, animated: true, completion: nil)

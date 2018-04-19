@@ -6,10 +6,10 @@
 //  Copyright © 2018 Jitendra Gandhi. All rights reserved.
 //
 
-enum URLType: String {
+enum URLType: String, Decodable {
     
-    case unknown    = "unknown"
-    case details    = "detail"
-    case wiki       = "wiki"
-    case comiclink  = "comiclink"
+    case unknown
+    case detail
+    case wiki
+    case comiclink
 }
